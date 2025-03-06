@@ -1,0 +1,49 @@
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth-service
+      - booking-service
+      - vehicle-service
+      - driver-service
+      - payment-service
+      - notification-service
+      - analytics-service
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "5001:5001"
+  
+  booking-service:
+    build: ./booking-service
+    ports:
+      - "5002:5002"
+
+  vehicle-service:
+    build: ./vehicle-service
+    ports:
+      - "5003:5003"
+
+  driver-service:
+    build: ./driver-service
+    ports:
+      - "5004:5004"
+
+  payment-service:
+    build: ./payment-service
+    ports:
+      - "5005:5005"
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "5006:5006"
+
+  analytics-service:
+    build: ./analytics-service
+    ports:
+      - "5007:5007"
